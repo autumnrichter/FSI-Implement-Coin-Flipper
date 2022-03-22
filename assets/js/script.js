@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelector('#tails').textContent = 0
         document.querySelector('#tails-percent').textContent = 0
 
-        document.querySelector('message-container h3').textContent = "Let's get rolling!"
+        document.querySelector('.message-container h3').textContent = "Let's get rolling!"
     // TODO: Reset global variables to 0
     // TODO: Update the scoreboard (same logic as in flip button click handler)
     })
 
-
+    
 })
