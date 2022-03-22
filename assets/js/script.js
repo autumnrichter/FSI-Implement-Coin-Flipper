@@ -12,32 +12,32 @@ document.addEventListener('DOMContentLoaded', function () {
         count[result]++ // count.heads || count['heads']
 
         //DOM Stuff
-        let img = document.querySelector(`img`)
+        let img = document.querySelector('img')
         img.src = `assets/images/penny-${result}.jpg`
         img.alt = `${result} face of penny`
 
-        let message = document.querySelector(`.message-container h3`)
+        let message = document.querySelector('.message-container h3')
         message.textContent = `You flipped ${result}`
 
         // Update the scoreboard
         let total = count.heads + count.tails
         //Update Numbers
         document.querySelector(`#${result}`).textContent = count[result]
-        document.querySelector(`#heads-percent`).textContent = (count.heads/total * 100) + "%"
-        document.querySelector(`#tails-percent`).textContent = (count.tails/total * 100) + "%"
+        document.querySelector('#heads-percent').textContent = Math.round(count.heads/total * 100) + "%"
+        document.querySelector('#tails-percent').textContent = Math.round(count.tails/total * 100) + "%"
         }
 
 
 
-    document.querySelector(`#flip`).addEventListener(`click`, function(e) {
-        console.log(`flipped a coin`)
+    document.querySelector('#flip').addEventListener('click', function(e) {
+        console.log('flipped a coin')
         // TODO: Determine flip outcome
         if (Math.random() < .5) {
             //Do heads stuff
-           handleFlip(`heads`)
+           handleFlip('heads')
         } else {
-            console.log(`tails`)
-            handleFlip(`tails`)
+            console.log('tails')
+            handleFlip('tails')
         }
         // TODO: Update image and status message in the DOM
 
@@ -47,8 +47,17 @@ document.addEventListener('DOMContentLoaded', function () {
         // HINT: Make sure not to divide by 0! (if total is 0, percent will be 0 as well)
         // TODO: Update the display of each table cell
     })
-    document.querySelector(`#clear`).addEventListener(`click`, function(e) {
-        console.log(`cleared scoreboard`)
+    document.querySelector('#clear').addEventListener('click', function(e) {
+        console.log('cleared scoreboard')
+        count.heads = 0
+        count.tails = 0
+
+        document.querySelector('#heads').textContent = 0
+        document.querySelector('#heads-percent').textContent = 0
+        document.querySelector('#tails').textContent = 0
+        document.querySelector('#tails-percent').textContent = 0
+
+        document.querySelector('message-container h3').textContent = "Let's get rolling!"
     // TODO: Reset global variables to 0
     // TODO: Update the scoreboard (same logic as in flip button click handler)
     })
