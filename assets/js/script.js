@@ -36,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
             //Do heads stuff
            handleFlip('heads')
         } else {
-            console.log('tails')
             handleFlip('tails')
         }
         // TODO: Update image and status message in the DOM
@@ -62,5 +61,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // TODO: Update the scoreboard (same logic as in flip button click handler)
     })
 
-    
+
 })
